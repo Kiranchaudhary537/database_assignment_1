@@ -38,7 +38,7 @@ CREATE TABLE retweets (
 -- comments table
 CREATE TABLE comments (
   comment_id SERIAL PRIMARY KEY,
-  tweet_id INTEGER UNIQUE NOT NULL,
+  tweet_id INTEGER NOT NULL,
   parent_comment_id INTEGER,
   commented_at TIMESTAMP NOT NULL DEFAULT current_timestamp,
   FOREIGN KEY (tweet_id) REFERENCES tweets(tweet_id),
